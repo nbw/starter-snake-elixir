@@ -17,9 +17,9 @@ defmodule ElixirSnake.Router do
     {:ok, body, conn} = read_body(conn)
     body = Poison.decode!(body)
     IO.inspect(body)
-    start_response = ElixirSnake.start(body)
+    start_response = ElixirSnake.start_resp(body)
     IO.inspect(start_response)
-    
+
     send_resp(conn, 200, Poison.encode!(start_response))
   end
 
@@ -27,7 +27,7 @@ defmodule ElixirSnake.Router do
     {:ok, body, conn} = read_body(conn)
     body = Poison.decode!(body)
     IO.inspect(body)
-    move_response = ElixirSnake.move(body)
+    move_response = ElixirSnake.move_resp(body)
     IO.inspect(move_response)
 
     send_resp(conn, 200, Poison.encode!(move_response))
@@ -37,8 +37,10 @@ defmodule ElixirSnake.Router do
     {:ok, body, conn} = read_body(conn)
     body = Poison.decode!(body)
     IO.inspect(body)
+    end_response = ElixirSnake.end_resp(body)
+    IO.inspect(end_response)
 
-    send_resp(conn, 200, "")
+    send_resp(conn, 200, Poison.encode!(end_response))
   end
 
   match _ do
