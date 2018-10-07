@@ -45,6 +45,13 @@ iex -S mix
 
 Test the client in your browser: [http://localhost:8085](http://localhost:8085)
 
+### Testing
+
+You can run the test suite by:
+
+```
+mix test
+```
 
 ### Deploying to Heroku
 
