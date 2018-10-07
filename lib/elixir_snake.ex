@@ -1,13 +1,14 @@
 defmodule ElixirSnake do
   @moduledoc """
-  Documentation for ElixirSnake.
+  This is where you define the logic of your battlesnake!
   """
 
   @doc """
     This is the response to Post /start 
     This is where you define your color
   """
-  def start_resp(_) do 
+  def start_resp(start_request) do 
+    IO.inspect(start_request)
     %{
       color: "#c0ffee",
       taunt: "I'm READY"
@@ -19,6 +20,7 @@ defmodule ElixirSnake do
     Your snake logic should live here
   """
   def move_resp(board) do
+    IO.inspect(board)
     move = "right"
     %{
       move: move,
@@ -30,7 +32,8 @@ defmodule ElixirSnake do
     This is the response to Post /end
     This does not need to do anything
   """
-  def end_resp(_) do
+  def end_resp(end_request) do
+    IO.inspect(end_request)
     ""
   end
 end
