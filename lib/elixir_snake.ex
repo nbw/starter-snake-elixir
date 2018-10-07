@@ -34,6 +34,6 @@ defmodule ElixirSnake do
   """
   def end_resp(end_request) do
     IO.inspect(end_request)
-    ""
+    %{}
   end
 end
