@@ -9,7 +9,7 @@ defmodule ElixirSnake.Application do
     # List all child processes to be supervised
     children = [
       # Starts a worker by calling: ElixirSnake.Worker.start_link(arg)
-      Plug.Adapters.Cowboy2.child_spec(scheme: :http, plug: ElixirSnake.Router, options: [port: 8085])
+      Plug.Adapters.Cowboy2.child_spec(scheme: :http, plug: ElixirSnake.Router, options: [port: Application.get_env(:elixir_snake, :cowboy_port)])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

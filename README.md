@@ -45,6 +45,10 @@ iex -S mix
 
 Test the client in your browser: [http://localhost:8085](http://localhost:8085)
 
+####  Changing the port (optional)
+
+The default port can be changed in `config/config.exs`.
+
 ### Testing
 
 You can run the test suite by:
