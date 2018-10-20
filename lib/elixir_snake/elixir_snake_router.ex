@@ -10,7 +10,14 @@ defmodule ElixirSnake.Router do
 
   # Routes!
   get "/" do
-    send_resp(conn, 200, "This is the home of a battlesnake built with Elixir, please visit battlesnake.io to learn more")
+    conn
+    |> put_resp_content_type("text/html")
+    |> send_resp(200,
+       """
+       <div>
+        This is the home of a battlesnake built with Elixir, please visit <a href='https://www.battlesnake.io/'>battlesnake.io</a> to learn more.
+       </div>
+       """)
   end
 
   post "/start" do
